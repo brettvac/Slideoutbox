@@ -1,15 +1,16 @@
-# Slide Out Box Module
+# Slideoutbox
+![Slideoutbox Logo](Slideoutbox.jpg)
 A Joomla! module for displaying a customizable slideout box that appears when users scroll to a specified page depth.
 
 Want to engage your website visitors with a call-to-action or promotional content? Slideoutbox lets you display a sleek popup box triggered by scroll depth, perfect for capturing attention and driving conversions.
 
-This is your first step to turning passive website visitors into engaged users who interact with your offers.
+This is your first step to turning passive website visitors into engaged users who interact with your offers. The idea was to create one of those container divs you see to log into a third party service.
 
 ## How To Use Slideoutbox
-1. Install the module via the Joomla! Extensions Manager. You can install via URL by using this URL: [https://github.com/brettvac/slideoutbox/releases/download/1.0/mod_slideoutbox.zip](https://github.com/brettvac/slideoutbox/releases/download/1.0/mod_slideoutbox.zip)
-2. Navigate to Extensions > Modules and find "Slideoutbox".
+1. Install the module via the Joomla! Extensions Manager. You can install via URL by using this direct link: [https://github.com/brettvac/slideoutbox/releases/latest/download/mod_slideoutbox.zip](https://github.com/brettvac/slideoutbox/releases/latest/download/mod_slideoutbox.zip)
+2. Navigate to Content > Modules and find "Slideoutbox".
 3. Configure the module settings, including scroll depth (e.g., 50%), heading tag (h1-h6), main text, button URL, and cookie expiration (days).
-4. Publish the module in a custom position (e.g., `slideoutbox` or `footer`). The slideout will appear when users scroll to the set depth.
+4. Publish the module in the `footer` position. The slideout will appear when users scroll to the set depth.
 
 ## Features
 - **Supports Prepared Content**: You can enable content preparation and show Joomla plugins inside the box.
@@ -18,7 +19,7 @@ This is your first step to turning passive website visitors into engaged users w
 - **Responsive Design**: Adapts to mobile devices with smaller screens.
 
 ## Requirements
-This module works with Joomla! versions greater than 4.0 and requires PHP 8.1 or later.
+This module works with Joomla! versions greater than 4.4 and requires PHP 7.2.5 or later.
 No external accounts or APIs are needed, just a Joomla installation.
 
 ## FAQ
@@ -28,5 +29,12 @@ No external accounts or APIs are needed, just a Joomla installation.
 **Q: Why is the module ID used in the cookie name?**  
 **A:** The module ID ensures unique cookies (e.g., `mod_slideoutbox_closed_<moduleId>`) to avoid conflicts, even for a single instance.
 
-## Credits
-- **itoctopus** and **convertbox** for the original idea
+**Q: This plugin is awesome! Can I send a donation?**  
+**A:** Sure! Send your cryptonation to the following wallets:
+
+`BTC 1PXWZJcBfehqgV25zWdVDS6RF2yVMxFkZD`
+
+`Eth 0xC9b695D4712645Ba178B4316154621B284e2783D`
+
+**Q: Got any more awesome Joomla! plugins?**  
+**A:** Find them [right here](https://naftee.com)

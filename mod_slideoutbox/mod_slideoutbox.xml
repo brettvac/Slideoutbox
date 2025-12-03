@@ -1,174 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<extension type="module" client="site" version="4.0" method="upgrade">
-    <name>MOD_SLIDEOUTBOX</name>
-    <element>mod_slideoutbox</element>
-    <author>Brett</author>
-    <creationDate>6:32AM 30/01/2023</creationDate>
-    <license>GPLv2</license>
-    <authorEmail>daloonik@gmail.com</authorEmail>
-    <version>1.0</version>
-    <description>MOD_SLIDEOUTBOX_DESCRIPTION</description>
-    <authorUrl>https://naftee.com</authorUrl>
-    
-    <namespace path="src">Naftee\Module\Slideoutbox</namespace>
-    
-    <files>
-        <folder>language</folder>
-        <folder>media</folder>
-        <folder>services</folder>
-        <folder>src</folder>
-        <folder>tmpl</folder>
-        <filename>mod_slideoutbox.xml</filename>
-        <filename>script.php</filename>
-        <filename>index.html</filename>
-    </files>
-    
-    <languages folder="language">
-        <language tag="en-GB">en-GB/mod_slideoutbox.ini</language>
-        <language tag="en-GB">en-GB/mod_slideoutbox.sys.ini</language>
-        <language tag="fr-FR">fr-FR/mod_slideoutbox.ini</language>
-        <language tag="fr-FR">fr-FR/mod_slideoutbox.sys.ini</language>
-    </languages>
-    
-    <media destination="mod_slideoutbox" folder="media">
-        <folder>css</folder>
-        <folder>js</folder>
-        <filename>joomla.asset.json</filename>
-    </media>
-    
-    <config>
-        <fields name="params">
-            <fieldset name="basic">
-                <field
-                    name="position_notice"
-                    type="note"
-                    class="alert alert-info"
-                    label=""
-                    description="MOD_SLIDEOUTBOX_POSITION_NOTICE_DESC"
-                />
-                <field
-                    name="scroll_depth"
-                    type="text"
-                    label="MOD_SLIDEOUTBOX_SCROLL_DEPTH_LABEL"
-                    description="MOD_SLIDEOUTBOX_SCROLL_DEPTH_DESC"
-                    default="50"
-                    filter="integer"
-                />
-                <field
-                    name="cookie_expire"
-                    type="text"
-                    label="MOD_SLIDEOUTBOX_COOKIE_EXPIRE_LABEL"
-                    description="MOD_SLIDEOUTBOX_COOKIE_EXPIRE_DESC"
-                    default="7"
-                    size="10"
-                    filter="integer"
-                />
-                <field
-                    name="show_once_session"
-                    type="radio"
-                    class="btn-group"
-                    default="0"
-                    label="MOD_SLIDEOUTBOX_SHOW_ONCE_SESSION_LABEL"
-                    description="MOD_SLIDEOUTBOX_SHOW_ONCE_SESSION_DESC"
-                >
-                    <option value="1">JYES</option>
-                    <option value="0">JNO</option>
-                </field>
-                <field
-                    name="exclude_queries"    type="text"    label="MOD_SLIDEOUTBOX_EXCLUDE_QUERIES_LABEL"    description="MOD_SLIDEOUTBOX_EXCLUDE_QUERIES_DESC"
-                     default=""    size="75"    filter="raw" />
-            </fieldset>
-            
-            <fieldset name="slidebox_settings" label="MOD_SLIDEOUTBOX_FIELDSET_SLIDEBOX_SETTINGS_LABEL">
-                <field
-                    name="show_heading"
-                    type="radio"
-                    class="btn-group"
-                    default="0"
-                    label="MOD_SLIDEOUTBOX_SHOW_HEADING_LABEL"
-                    description="MOD_SLIDEOUTBOX_SHOW_HEADING_DESC"
-                >
-                    <option value="1">JYES</option>
-                    <option value="0">JNO</option>
-                </field>
-                <field
-                    name="heading_tag"
-                    type="list"
-                    default="h2"
-                    label="MOD_SLIDEOUTBOX_HEADING_TAG_LABEL"
-                    description="MOD_SLIDEOUTBOX_HEADING_TAG_DESC"
-                    showon="show_heading:1"
-                >
-                    <option value="h1">H1</option>
-                    <option value="h2">H2</option>
-                    <option value="h3">H3</option>
-                    <option value="h4">H4</option>
-                    <option value="h5">H5</option>
-                    <option value="h6">H6</option>
-                </field>
-                <field
-                    name="heading"
-                    type="text"
-                    size="50"
-                    default=""
-                    label="MOD_SLIDEOUTBOX_HEADING_LABEL"
-                    description="MOD_SLIDEOUTBOX_HEADING_DESC"
-                    showon="show_heading:1"
-                />
-                <field
-                    name="main_text"
-                    type="editor"
-                    label="MOD_SLIDEOUTBOX_MAIN_TEXT_LABEL"
-                    description="MOD_SLIDEOUTBOX_MAIN_TEXT_DESC"
-                    default=""
-                    height="300"             
-                    filter="safehtml"
-                />
-                <field
-                    name="show_button"
-                    type="radio"
-                    class="btn-group"
-                    default="0"
-                    label="MOD_SLIDEOUTBOX_SHOW_BUTTON_LABEL"
-                    description="MOD_SLIDEOUTBOX_SHOW_BUTTON_DESC"
-                >
-                    <option value="1">JYES</option>
-                    <option value="0">JNO</option>
-                </field>
-                <field
-                    name="button_text"
-                    type="text"
-                    size="50"
-                    default="Click Here"
-                    label="MOD_SLIDEOUTBOX_BUTTON_TEXT_LABEL"
-                    description="MOD_SLIDEOUTBOX_BUTTON_TEXT_DESC"
-                    showon="show_button:1"
-                />
-                <field
-                    name="button_url"
-                    type="url"
-                    size="50"
-                    default=""
-                    label="MOD_SLIDEOUTBOX_BUTTON_URL_LABEL"
-                    description="MOD_SLIDEOUTBOX_BUTTON_URL_DESC"
-                    showon="show_button:1"
-                />
-                <field
-                    name="prepare_content"
-                    type="radio"
-                    class="btn-group"
-                    default="0"
-                    label="MOD_SLIDEOUTBOX_PREPARE_CONTENT_LABEL"
-                    description="MOD_SLIDEOUTBOX_PREPARE_CONTENT_DESC"
-                >
-                    <option value="1">JYES</option>
-                    <option value="0">JNO</option>
-                </field>
-            </fieldset>
-        </fields>
-    </config>
-    
-    <updateservers>
-        <server type="extension" name="Slide Out Box Updates">https://raw.githubusercontent.com/brettvac/slideoutbox/refs/heads/main/update/updates.xml</server>
-    </updateservers>
+<extension type="module" client="site" method="upgrade">
+   <name>MOD_SLIDEOUTBOX</name>
+   <element>mod_slideoutbox</element>
+   <author>Brett</author>
+   <creationDate>6:32AM 30/01/2023</creationDate>
+   <license>GPLv2</license>
+   <authorEmail>daloonik@gmail.com</authorEmail>
+   <version>1.1</version>
+   <description>MOD_SLIDEOUTBOX_DESCRIPTION</description>
+   <authorUrl>https://naftee.com</authorUrl>
+   
+   <scriptfile>script.php</scriptfile>
+   
+   <namespace path="src">Naftee\Module\Slideoutbox</namespace>
+   
+   <files>
+      <folder module="mod_slideoutbox">services</folder>
+      <folder>src</folder>
+      <folder>tmpl</folder>
+      <filename>mod_slideoutbox.xml</filename>
+   </files>
+   
+   <languages folder="language">
+      <language tag="en-GB">en-GB/mod_slideoutbox.ini</language>
+      <language tag="en-GB">en-GB/mod_slideoutbox.sys.ini</language>
+      <language tag="fr-FR">fr-FR/mod_slideoutbox.ini</language>
+      <language tag="fr-FR">fr-FR/mod_slideoutbox.sys.ini</language>
+   </languages>
+   
+   <media destination="mod_slideoutbox" folder="media">
+      <folder>css</folder>
+      <folder>js</folder>
+      <filename>joomla.asset.json</filename>
+   </media>
+   
+   <config>
+      <fields name="params">
+         <fieldset name="basic">
+            <field name="position_notice" type="note" class="alert alert-info" label="" description="MOD_SLIDEOUTBOX_POSITION_NOTICE_DESC" />
+            <field name="scroll_depth" type="number" label="MOD_SLIDEOUTBOX_SCROLL_DEPTH_LABEL" description="MOD_SLIDEOUTBOX_SCROLL_DEPTH_DESC" min="0" max="100" step="1" default="50" filter="integer" />
+            <field name="cookie_expire" type="number" label="MOD_SLIDEOUTBOX_COOKIE_EXPIRE_LABEL" description="MOD_SLIDEOUTBOX_COOKIE_EXPIRE_DESC" min="0" step="1" default="7" size="10" filter="integer" />
+            <field name="show_once_session" type="radio" class="btn-group" default="0" label="MOD_SLIDEOUTBOX_SHOW_ONCE_SESSION_LABEL" description="MOD_SLIDEOUTBOX_SHOW_ONCE_SESSION_DESC">
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field name="exclude_queries" type="text" label="MOD_SLIDEOUTBOX_EXCLUDE_QUERIES_LABEL" description="MOD_SLIDEOUTBOX_EXCLUDE_QUERIES_DESC" default="" size="75" filter="raw" />
+         </fieldset>
+         <fieldset name="slidebox_settings" label="MOD_SLIDEOUTBOX_FIELDSET_SLIDEBOX_SETTINGS_LABEL">
+            <field name="show_heading" type="radio" class="btn-group" default="0" label="MOD_SLIDEOUTBOX_SHOW_HEADING_LABEL" description="MOD_SLIDEOUTBOX_SHOW_HEADING_DESC">
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field name="heading_tag" type="list" default="h2" label="MOD_SLIDEOUTBOX_HEADING_TAG_LABEL" description="MOD_SLIDEOUTBOX_HEADING_TAG_DESC" showon="show_heading:1">
+               <option value="h1">H1</option>
+               <option value="h2">H2</option>
+               <option value="h3">H3</option>
+               <option value="h4">H4</option>
+               <option value="h5">H5</option>
+               <option value="h6">H6</option>
+            </field>
+            <field name="heading" type="text" size="50" default="" label="MOD_SLIDEOUTBOX_HEADING_LABEL" description="MOD_SLIDEOUTBOX_HEADING_DESC" showon="show_heading:1" />
+            <field name="heading_class" type="text" default="display-4" label="MOD_SLIDEOUTBOX_HEADING_CLASS_LABEL" description="MOD_SLIDEOUTBOX_HEADING_CLASS_DESC" showon="show_heading:1" />
+            <field name="main_text" type="editor" label="MOD_SLIDEOUTBOX_MAIN_TEXT_LABEL" description="MOD_SLIDEOUTBOX_MAIN_TEXT_DESC" default="" height="300" filter="safehtml" />
+            <field name="show_button" type="radio" class="btn-group" default="0" label="MOD_SLIDEOUTBOX_SHOW_BUTTON_LABEL" description="MOD_SLIDEOUTBOX_SHOW_BUTTON_DESC">
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field name="button_text" type="text" size="50" default="Click Here" label="MOD_SLIDEOUTBOX_BUTTON_TEXT_LABEL" description="MOD_SLIDEOUTBOX_BUTTON_TEXT_DESC" showon="show_button:1" />
+            <field name="button_url" type="url" size="50" default="" label="MOD_SLIDEOUTBOX_BUTTON_URL_LABEL" description="MOD_SLIDEOUTBOX_BUTTON_URL_DESC" showon="show_button:1" />
+            <field name="button_class" type="text" default="btn" label="MOD_SLIDEOUTBOX_BUTTON_CLASS_LABEL" description="MOD_SLIDEOUTBOX_BUTTON_CLASS_DESC" showon="show_button:1" />
+            <field name="button_target" type="radio" class="btn-group" default="0" label="MOD_SLIDEOUTBOX_BUTTON_TARGET_LABEL" description="MOD_SLIDEOUTBOX_BUTTON_TARGET_DESC" showon="show_button:1">
+               <option value="0">MOD_SLIDEOUTBOX_BUTTON_TARGET_CURRENT</option>
+               <option value="1">MOD_SLIDEOUTBOX_BUTTON_TARGET_NEW</option>
+            </field>
+            <field name="prepare_content" type="radio" class="btn-group" default="0" label="MOD_SLIDEOUTBOX_PREPARE_CONTENT_LABEL" description="MOD_SLIDEOUTBOX_PREPARE_CONTENT_DESC">
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+         </fieldset>
+      </fields>
+   </config>
+   <updateservers>
+      <server type="extension" name="Slide Out Box Updates">https://raw.githubusercontent.com/brettvac/slideoutbox/refs/heads/main/update/updates.xml</server>
+   </updateservers>
 </extension>

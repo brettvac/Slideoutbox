@@ -1,5 +1,5 @@
 .sbox {
-    width: 50vh;
+    width: 30vw;
     height: auto;
     position: fixed;
     right: 10vh;
@@ -74,6 +74,12 @@
 
 .sbox [id^="sbox-"] a.btn:hover {
     background-color: #226fb6;
+}
+
+.sbox-content {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
 }
 
 /* Responsive adjustments */

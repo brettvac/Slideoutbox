@@ -1,7 +1,6 @@
 <?php
 /**
  * @package Slide Out Box Module
- * @version 1.0
  * @license GPLv2
  */
 
@@ -16,20 +15,20 @@ use Joomla\CMS\Language\Text;
 return new class () implements InstallerScriptInterface {
 
     private string $minimumJoomla = '4.4.0';
-    private string $minimumPhp    = '7.4.0';
+    private string $minimumPhp    = '7.2.5';
 
     public function install(InstallerAdapter $adapter): bool {
-        echo Text::_('MOD_SLIDEOUTBOX_INSTALL') . "<br>";
+        Factory::getApplication()->enqueueMessage(Text::_('MOD_SLIDEOUTBOX_INSTALL'), 'success');
         return true;
     }
 
     public function update(InstallerAdapter $adapter): bool {
-        echo Text::_('MOD_SLIDEOUTBOX_UPDATE') . "<br>";
+        Factory::getApplication()->enqueueMessage(Text::_('MOD_SLIDEOUTBOX_UPDATE'), 'success');
         return true;
     }
 
     public function uninstall(InstallerAdapter $adapter): bool {
-        echo Text::_('MOD_SLIDEOUTBOX_UNINSTALL') . "<br>";
+        Factory::getApplication()->enqueueMessage(Text::_('MOD_SLIDEOUTBOX_UNINSTALL'), 'info');
         return true;
     }
 
@@ -48,7 +47,7 @@ return new class () implements InstallerScriptInterface {
     }
 
     public function postflight(string $type, InstallerAdapter $adapter): bool {
-        echo Text::_('MOD_SLIDEOUTBOX_POSTFLIGHT') . "<br>";
+        Factory::getApplication()->enqueueMessage(Text::_('MOD_SLIDEOUTBOX_POSTFLIGHT'), 'info');
         return true;
     }
 };
