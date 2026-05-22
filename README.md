@@ -35,6 +35,3 @@ No external accounts or APIs are needed, just a Joomla installation.
 `BTC 1PXWZJcBfehqgV25zWdVDS6RF2yVMxFkZD`
 
 `Eth 0xC9b695D4712645Ba178B4316154621B284e2783D`
-
-**Q: Got any more awesome Joomla! plugins?**  
-**A:** Find them [right here](https://naftee.com)
