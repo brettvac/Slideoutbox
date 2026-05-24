@@ -1,6 +1,6 @@
-# Slideoutbox
+# Slide Out Box Module
 ![Slideoutbox Logo](Slideoutbox.jpg)
-A Joomla! module for displaying a customizable slideout box that appears when users scroll to a specified page depth.
+A Joomla! 4+ module for displaying a customizable slide out box that appears when users scroll to a specified page depth.
 
 Want to engage your website visitors with a call-to-action or promotional content? Slideoutbox lets you display a sleek popup box triggered by scroll depth, perfect for capturing attention and driving conversions.
 
