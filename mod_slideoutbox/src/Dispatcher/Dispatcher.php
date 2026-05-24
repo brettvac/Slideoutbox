@@ -1,62 +1,83 @@
 <?php
 /**
  * @package Slide Out Box Module
- * @version 1.1
+ * @version 1.2
  * @license GPLv2
  */
 
 namespace Naftee\Module\Slideoutbox\Site\Dispatcher;
 
-\defined('_JEXEC') or die;
+\defined('_JEXEC') or die; 
+//No direct access
 
 use Joomla\CMS\Dispatcher\AbstractModuleDispatcher;
 use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\Application\CMSApplicationInterface;
-use Joomla\Registry\Registry;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Uri\Uri;
 
 class Dispatcher extends AbstractModuleDispatcher
-{
-    protected function getLayoutData(): array
     {
-        return parent::getLayoutData();
-    }
-    
-    public function dispatch()
-    {
+    /**
+     * Returns the layout data.
+     *
+     * @return  array|false
+     */
+    protected function getLayoutData(): array|false
+        {  
+        // Get base data (module, app, input, params and template)
+        $data = parent::getLayoutData();
+
+        // The parent getLayoutData() puts the module's Registry object into $data['params']
+        $params = $data['params'];
         
         // Get the module parameters from manifest file
-        $params = new Registry($this->module->params);
         $exclude_queries = $params->get('exclude_queries', '');
-        $show_once_session = $params->get('show_once_session', 0);
         
         // Check query exclusion
         if ($exclude_queries)
-          {  
-          $query = Uri::getInstance()->getQuery();
-          $exclude = array_map('trim', explode(',', $exclude_queries));
-    
-          foreach ($exclude as $string) {
-             if ($string && strpos($query, $string) !== false) {
-               return; // Don't show the Slideoutbox if query string contains excluded term
-             }
-          }
-        }
+        {
+            $query = Uri::getInstance()->getQuery(true); // Return the query as a key => value pair array
 
+            $exclude = array_map('trim', explode(',', $exclude_queries));
+
+            // flatten query into tokens (keys + values)
+            $tokens = [];
+
+            foreach ($query as $key => $value)
+            {
+                $tokens[] = (string) $key;
+                $tokens[] = (string) $value;
+            }
+
+            foreach ($exclude as $string)
+            {
+                if ($string === '')
+                {
+                    continue;
+                }
+
+                if (in_array($string, $tokens, true))
+                {
+                    return false;  // Don't show the Slideoutbox if query string contains excluded term
+                }
+            }
+        }
+       
        // Check session variable if set to show only once per session
+       $show_once_session = $params->get('show_once_session', 0);
+       
        if ($show_once_session) {
           $session = Factory::getSession();
           $sessionKey = 'mod_slideoutbox_seen_' . $this->module->id;
      
          if ($session->get($sessionKey)) {
-              return; // Skip rendering if already seen this session
+              return false; // Skip rendering if already seen this session
           }
     
           $session->set($sessionKey, 'seen'); // Mark as seen
         }
 
-        // Load the layout
-        require ModuleHelper::getLayoutPath('mod_slideoutbox', $params->get('layout', 'default'));
+        return $data;
+        }
     }
-}

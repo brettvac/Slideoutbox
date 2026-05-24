@@ -1,23 +1,37 @@
 <?php
 /**
  * @package Slide Out Box Module
- * @version 1.1
- * @license GPLv2
+ * @version 1.2
+ * @license GNU General Public License version 2
  */
 
 \defined('_JEXEC') or die;
 
-use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 
 //Get the Web Asset Manager
-$document = Factory::getApplication()->getDocument();
+$document = $app->getDocument();
+/** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = $document->getWebAssetManager();
 $wa->getRegistry()->addExtensionRegistryFile('mod_slideoutbox');
 
-// Get variable values from the parameters
+// Load module script and style as per joomla.asset.json
+$wa->useScript('mod_slideoutbox.slideoutbox');
+$wa->useStyle('mod_slideoutbox.slideoutbox');
+
+// Prepare the options array
 $scroll_depth = $params->get('scroll_depth', 50);
 $cookie_expire = $params->get('cookie_expire', 7);
+$options = [
+    'scrollDepth' => (int)$scroll_depth,
+    'cookieExpire' => (int)$cookie_expire,
+    'moduleId' => $module->id
+];
+
+// Pass options to JavaScript 
+$document->addScriptOptions('mod_slideoutbox', $options);
+
+// Get remaining variable values from the parameters
 $show_heading = $params->get('show_heading', 0);
 $heading_tag = $params->get('heading_tag', 'h2');
 $heading_class = $params->get('heading_class', 'display-4');
@@ -29,18 +43,6 @@ $button_url = $params->get('button_url', '');
 $button_class = $params->get('button_class', 'btn');
 $button_target = $params->get('button_target', 0);
 $prepare_content = $params->get('prepare_content', 0);
-
-// Load module assets
-$wa->useScript('mod_slideoutbox.slideoutbox');
-$wa->useStyle('mod_slideoutbox.slideoutbox');
-
-// Pass parameters to JavaScript
-$options = [
-    'scrollDepth' => (int)$scroll_depth,
-    'cookieExpire' => (int)$cookie_expire,
-    'moduleId' => $this->module->id
-];
-$document->addScriptOptions('mod_slideoutbox', $options);
 
 //Prepare the Slideoutbox output
 $heading_html = '';
@@ -62,7 +64,7 @@ if ($show_button && $button_text && $button_url) {
 ?>
 
 <div class="sbox">
-    <div id="sbox-<?php echo $this->module->id; ?>">
+    <div id="sbox-<?php echo $module->id; ?>">
         <a class="close"></a>
         <div class="sbox-content">
         <?php echo $heading_html; ?>
