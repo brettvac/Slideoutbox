@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="module" client="site" method="upgrade">
    <name>MOD_SLIDEOUTBOX</name>
-   <version>1.2</version>
+   <version>1.3</version>
    <description>MOD_SLIDEOUTBOX_DESCRIPTION</description>
    <author>Brett</author>
    <creationDate>30/01/2023</creationDate>
@@ -56,21 +56,21 @@
                <option value="h5">H5</option>
                <option value="h6">H6</option>
             </field>
-            <field name="heading" type="text" size="50" default="" label="MOD_SLIDEOUTBOX_HEADING_LABEL" description="MOD_SLIDEOUTBOX_HEADING_DESC" showon="show_heading:1" />
+            <field name="heading" type="text" default="" label="MOD_SLIDEOUTBOX_HEADING_LABEL" description="MOD_SLIDEOUTBOX_HEADING_DESC" showon="show_heading:1" />
             <field name="heading_class" type="text" default="display-4" label="MOD_SLIDEOUTBOX_HEADING_CLASS_LABEL" description="MOD_SLIDEOUTBOX_HEADING_CLASS_DESC" showon="show_heading:1" />
             <field name="main_text" type="editor" label="MOD_SLIDEOUTBOX_MAIN_TEXT_LABEL" description="MOD_SLIDEOUTBOX_MAIN_TEXT_DESC" default="" height="300" filter="safehtml" />
-            <field name="show_button" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_SLIDEOUTBOX_SHOW_BUTTON_LABEL" description="MOD_SLIDEOUTBOX_SHOW_BUTTON_DESC">
+            <field name="show_button" type="radio" class="btn-group" default="0" label="MOD_SLIDEOUTBOX_SHOW_BUTTON_LABEL" description="MOD_SLIDEOUTBOX_SHOW_BUTTON_DESC">
                <option value="1">JYES</option>
                <option value="0">JNO</option>
             </field>
-            <field name="button_text" type="text" size="50" default="Click Here" label="MOD_SLIDEOUTBOX_BUTTON_TEXT_LABEL" description="MOD_SLIDEOUTBOX_BUTTON_TEXT_DESC" showon="show_button:1" />
-            <field name="button_url" type="url" size="50" default="" label="MOD_SLIDEOUTBOX_BUTTON_URL_LABEL" description="MOD_SLIDEOUTBOX_BUTTON_URL_DESC" showon="show_button:1" />
-            <field name="button_class" type="text" default="btn" label="MOD_SLIDEOUTBOX_BUTTON_CLASS_LABEL" description="MOD_SLIDEOUTBOX_BUTTON_CLASS_DESC" showon="show_button:1" />
+            <field name="button_text" type="text" default="Click Here" label="MOD_SLIDEOUTBOX_BUTTON_TEXT_LABEL" description="MOD_SLIDEOUTBOX_BUTTON_TEXT_DESC" showon="show_button:1" />
+            <field name="button_url" type="url" default="" label="MOD_SLIDEOUTBOX_BUTTON_URL_LABEL" description="MOD_SLIDEOUTBOX_BUTTON_URL_DESC" showon="show_button:1" />
+            <field name="button_class" type="text" default="btn text-white" label="MOD_SLIDEOUTBOX_BUTTON_CLASS_LABEL" description="MOD_SLIDEOUTBOX_BUTTON_CLASS_DESC" showon="show_button:1" />
             <field name="button_target" type="radio" class="btn-group" default="0" label="MOD_SLIDEOUTBOX_BUTTON_TARGET_LABEL" description="MOD_SLIDEOUTBOX_BUTTON_TARGET_DESC" showon="show_button:1">
                <option value="0">MOD_SLIDEOUTBOX_BUTTON_TARGET_CURRENT</option>
                <option value="1">MOD_SLIDEOUTBOX_BUTTON_TARGET_NEW</option>
             </field>
-            <field name="prepare_content" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_SLIDEOUTBOX_PREPARE_CONTENT_LABEL" description="MOD_SLIDEOUTBOX_PREPARE_CONTENT_DESC">
+            <field name="prepare_content" type="radio" class="btn-group" default="0" label="MOD_SLIDEOUTBOX_PREPARE_CONTENT_LABEL" description="MOD_SLIDEOUTBOX_PREPARE_CONTENT_DESC">
                <option value="1">JYES</option>
                <option value="0">JNO</option>
             </field>

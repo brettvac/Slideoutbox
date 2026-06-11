@@ -3,6 +3,22 @@
     <changelog>
         <element>mod_slideoutbox</element>
         <type>module</type>
+        <version>1.3</version>
+        <fix>
+            <item>Implemented functionality to replace tokens inside a button URL with variables provided by the module for better click tracking.</item>
+        </fix>
+        <addition>
+            <item>Expanded the language strings for the button inline help to explain the available tokens.</item>
+            <item>Added extra default text-white class to improve button text visibility.</item>
+        </addition>
+        <remove>
+            <item>Removed size parameters from manifest file fields.</item>
+            <item><![CDATA[Removed unnecessary <code>btn-group-yesno</code> class from manifest configuration file.]]></item>
+        </remove>
+    </changelog>
+    <changelog>
+        <element>mod_slideoutbox</element>
+        <type>module</type>
         <version>1.2</version>
         <fix>
             <item>Improved handling of short screens without a scrollbar.</item>
@@ -13,14 +29,14 @@
             <item>Added GNU General Public License version 2.</item>
             <item>Implemented a named handler function for the scroll listener that disables it when the slideout box appears.</item>
             <item>Added class btn-group-yesno to radio buttons inside the manifest configuration file.</item>
-            <item>Added changelogurl tag to the extension manifest XML to link versions to changelogs in the manage view.</item>
+            <item>Added changelogurl tag to the extension manifest XML file to link versions to changelogs in the manage view.</item>
             <item>Added changelog entries for all versions to the update directory.</item>
         </addition>
         <change>
             <item>Implemented AbstractModuleDispatcher override of getLayoutData instead of dispatch.</item>
             <item>Changed module variable inside the template file due to AbstractModuleDispatcher implementation.</item>
             <item>Changed order of statements inside the template file to move variable declaration after web asset loading.</item>
-            <item>Updated versions of asset items inside the joomla.asset.json file.</item>
+            <item><![CDATA[Updated versions of asset items inside the <code>joomla.asset.json</code> file.]]></item>
             <item>Standardized items and corrected URLs inside the update server file.</item>
             <item>Replaced Factory call for Document object and instead obtained it from the module application object.</item>
         </change>

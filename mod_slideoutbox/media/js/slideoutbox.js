@@ -1,7 +1,7 @@
 /**
  * Slide Out Box Module
  *
- * @version 1.2
+ * @version 1.3
  * @license GPL-2.0
  */
 jQuery(function($) {

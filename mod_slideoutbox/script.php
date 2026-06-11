@@ -1,7 +1,7 @@
 <?php
 /**
  * @package Slide Out Box Module
- * @license GPLv2
+ * @license GNU General Public License version 2
  */
 
 // No direct access

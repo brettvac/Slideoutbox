@@ -5,11 +5,11 @@
         <description>Updates for the Slide Out Box Module.</description>
         <element>mod_slideoutbox</element>
         <type>module</type>
-        <version>1.2</version>
+        <version>1.3</version>
         <client>site</client>
         
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/brettvac/slideoutbox/releases/download/1.2/mod_slideoutbox.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/brettvac/slideoutbox/releases/download/1.3/mod_slideoutbox.zip</downloadurl>
         </downloads>
 
         <infourl title="Slide Out Box GitHub Repository">https://github.com/brettvac/slideoutbox</infourl>

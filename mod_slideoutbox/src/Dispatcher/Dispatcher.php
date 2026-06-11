@@ -1,8 +1,8 @@
 <?php
 /**
- * @package Slide Out Box Module
- * @version 1.2
- * @license GPLv2
+ * @package    Slide Out Box Module
+ * @version    1.3
+ * @license    GNU General Public License version 2
  */
 
 namespace Naftee\Module\Slideoutbox\Site\Dispatcher;
@@ -37,7 +37,9 @@ class Dispatcher extends AbstractModuleDispatcher
         // Check query exclusion
         if ($exclude_queries)
         {
-            $query = Uri::getInstance()->getQuery(true); // Return the query as a key => value pair array
+            /** @var Joomla\CMS\Uri\Uri $uri */
+            $uri = Uri::getInstance();
+            $query = $uri->getQuery(true); // Return the query as a key => value pair array
 
             $exclude = array_map('trim', explode(',', $exclude_queries));
 
