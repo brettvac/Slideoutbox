@@ -13,9 +13,9 @@ This is your first step to turning passive website visitors into engaged users w
 4. Publish the module in the `footer` position. The slideout will appear when users scroll to the set depth.
 
 ## Features
-- **Supports Prepared Content**: You can enable content preparation and show Joomla plugins inside the box.
-- **Customizable Content**: Configure heading (h1-h6), main text, and optional button with URL.
-- **Cookie Persistence**: Remembers closed state with a module-specific cookie to prevent reappearance.
+- **Supports Prepared Content**: You can enable content preparation and show Joomla plugins inside the main box content.
+- **Customizable Content**: Configure the box heading (h1-h6), content, and optional button with your URL that contains utm tracking parameters.
+- **Cookie Persistence**: Remembers closed state with a module-specific cookie to prevent reappearance before a set period.
 - **Responsive Design**: Adapts to mobile devices with smaller screens.
 
 ## Requirements
@@ -24,7 +24,7 @@ No external accounts or APIs are needed, just a Joomla installation.
 
 ## FAQ
 **Q: Can I display multiple slideout boxes on one page?**  
-**A:** Currently, the module supports one slideout per page. Multi-instance support may be added in a future update.
+**A:** Currently, the module supports one slideout per page.
 
 **Q: Why is the module ID used in the cookie name?**  
 **A:** The module ID ensures unique cookies (e.g., `mod_slideoutbox_closed_<moduleId>`) to avoid conflicts, even for a single instance.
