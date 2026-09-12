@@ -1,12 +1,12 @@
 /**
  * Slide Out Box Module
  *
- * @version 1.3
+ * @version 1.4
  * @license GPL-2.0
  */
 jQuery(function($) {
     // Get slidebox options passed by the template file
-    const options = Joomla.getOptions('mod_slideoutbox');
+    const options = Joomla.getOptions('mod_slideoutbox.vars');
     
     const moduleId = options.moduleId;
     const scrollDepth = options.scrollDepth;

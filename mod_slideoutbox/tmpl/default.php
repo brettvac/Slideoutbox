@@ -1,7 +1,7 @@
 <?php
 /**
  * @package Slide Out Box Module
- * @version 1.3
+ * @version 1.4
  * @license GNU General Public License version 2
  */
 
@@ -30,7 +30,7 @@ $options = [
 ];
 
 // Pass options to JavaScript 
-$document->addScriptOptions('mod_slideoutbox', $options);
+$document->addScriptOptions('mod_slideoutbox.vars', $options);
 
 // Get remaining variable values from the parameters
 $show_heading = $params->get('show_heading', 0);

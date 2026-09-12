@@ -3,6 +3,25 @@
     <changelog>
         <element>mod_slideoutbox</element>
         <type>module</type>
+        <version>1.4</version>
+        <fix>
+            <item>Fixed content clipping on screens with limited vertical space by allowing the slideout box to scroll when its content exceeds the available viewport height.</item>
+            <item>Improved compatibility with light and dark themes by allowing the slideout box text and headings to inherit the active theme's text color.</item>
+            <item>Fixed close button visibility across light and dark themes by replacing the SVG background image with a CSS mask that uses the inherited text color.</item>
+        </fix>
+        <addition>
+            <item>Added automatic close button color adaptation through CSS masking and <code>currentColor</code>, eliminating the need for theme-specific close button rules.</item>
+            <item>Added responsive height handling to keep the slideout box usable on wide but short screens.</item>
+            <item>Added CSS variables for configuring the slideout box text, background, button, and button hover colors.</item>
+        </addition>
+        <remove>
+            <item>Removed hard-coded text colors from the slideout box and its headings and paragraphs.</item>
+            <item>Removed the SVG data URI previously used as the close button background image.</item>
+        </remove>
+    </changelog>
+    <changelog>
+        <element>mod_slideoutbox</element>
+        <type>module</type>
         <version>1.3</version>
         <fix>
             <item>Implemented functionality to replace tokens inside a button URL with variables provided by the module for better click tracking.</item>
