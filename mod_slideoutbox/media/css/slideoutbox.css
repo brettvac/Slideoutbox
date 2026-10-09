@@ -3,6 +3,7 @@
     --sbox-background-color: #fff;
     --sbox-button-color: #3289d9;
     --sbox-button-hover-color: #226fb6;
+    --sbox-close-color: #1a1a1a;
 }
 
 .sbox {
@@ -22,7 +23,7 @@
 .sbox [id^="sbox-"] {
     width: 100%;
     height: auto;
-    padding: 1.25rem;
+    padding: 0.6rem;
     background-color: var(--sbox-background-color);
     border: 0.6rem solid #3289d9;
     border-radius: 0.5rem;
@@ -56,7 +57,7 @@
     color: var(--sbox-text-color);
 }
 
-/* CSS close button — automatically contrasts with any background */
+/* CSS close button */
 .sbox [id^="sbox-"] a.close {
     width: 1rem;
     height: 1rem;
@@ -70,7 +71,6 @@
     border: 0;
     padding: 0;
     text-decoration: none;
-    mix-blend-mode: difference;
 }
 
 /* First half of the X */
@@ -82,7 +82,7 @@
     left: 50%;
     width: 1rem;
     height: 0.125rem;
-    background: var(--sbox-background-color);
+    background: var(--sbox-close-color);
     transform-origin: center;
 }
 
@@ -102,6 +102,7 @@
 .sbox [id^="sbox-"] a.btn {
     display: inline-block;
     padding: 0.6rem 1.25rem;
+    margin: 0.5rem;
     background-color: var(--sbox-button-color);
     text-decoration: none;
     text-align: center;

@@ -1,98 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelogs>
-    <changelog>
-        <element>mod_slideoutbox</element>
-        <type>module</type>
-        <version>1.4</version>
-        <fix>
-            <item>Fixed content clipping on screens with limited vertical space by allowing the slideout box to scroll when its content exceeds the available viewport height.</item>
-            <item>Improved compatibility with light and dark themes by allowing the slideout box text and headings to inherit the active theme's text color.</item>
-            <item>Fixed close button visibility across light and dark themes by replacing the SVG background image with a CSS mask that uses the inherited text color.</item>
-        </fix>
-        <addition>
-            <item>Added automatic close button color adaptation through CSS masking and <code>currentColor</code>, eliminating the need for theme-specific close button rules.</item>
-            <item>Added responsive height handling to keep the slideout box usable on wide but short screens.</item>
-            <item>Added CSS variables for configuring the slideout box text, background, button, and button hover colors.</item>
-        </addition>
-        <remove>
-            <item>Removed hard-coded text colors from the slideout box and its headings and paragraphs.</item>
-            <item>Removed the SVG data URI previously used as the close button background image.</item>
-        </remove>
-    </changelog>
-    <changelog>
-        <element>mod_slideoutbox</element>
-        <type>module</type>
-        <version>1.3</version>
-        <fix>
-            <item>Implemented functionality to replace tokens inside a button URL with variables provided by the module for better click tracking.</item>
-        </fix>
-        <addition>
-            <item>Expanded the language strings for the button inline help to explain the available tokens.</item>
-            <item>Added extra default text-white class to improve button text visibility.</item>
-        </addition>
-        <remove>
-            <item>Removed size parameters from manifest file fields.</item>
-            <item><![CDATA[Removed unnecessary <code>btn-group-yesno</code> class from manifest configuration file.]]></item>
-        </remove>
-    </changelog>
-    <changelog>
-        <element>mod_slideoutbox</element>
-        <type>module</type>
-        <version>1.2</version>
-        <fix>
-            <item>Improved handling of short screens without a scrollbar.</item>
-            <item>Improved check for exclude queries to exactly match the input inside the module configuration.</item>
-            <item>Updated the GitHub repository name and removed broken link at the bottom of the README.</item>
-        </fix>
-        <addition>
-            <item>Added GNU General Public License version 2.</item>
-            <item>Implemented a named handler function for the scroll listener that disables it when the slideout box appears.</item>
-            <item>Added class btn-group-yesno to radio buttons inside the manifest configuration file.</item>
-            <item>Added changelogurl tag to the extension manifest XML file to link versions to changelogs in the manage view.</item>
-            <item>Added changelog entries for all versions to the update directory.</item>
-        </addition>
-        <change>
-            <item>Implemented AbstractModuleDispatcher override of getLayoutData instead of dispatch.</item>
-            <item>Changed module variable inside the template file due to AbstractModuleDispatcher implementation.</item>
-            <item>Changed order of statements inside the template file to move variable declaration after web asset loading.</item>
-            <item><![CDATA[Updated versions of asset items inside the <code>joomla.asset.json</code> file.]]></item>
-            <item>Standardized items and corrected URLs inside the update server file.</item>
-            <item>Replaced Factory call for Document object and instead obtained it from the module application object.</item>
-        </change>
-        <remove>
-            <item>Removed unused unsetCookie function.</item>
-            <item>Removed author URL, author email, and element from manifest file.</item>
-        </remove>
-    </changelog>
-    <changelog>
-        <element>mod_slideoutbox</element>
-        <type>module</type>
-        <version>1.1</version>
-        <fix>
-            <item>Fixed CSS item display inside the box.</item>
-            <item>Fixed the content type inside the manifest file.</item>
-        </fix>
-        <addition>
-            <item>Added support for opening links in a new tab when pressing the button.</item>
-            <item>Added more flexibility with content classes.</item>
-            <item>Implemented the abstract dispatcher.</item>
-        </addition>
-        <change>
-            <item>Improved the installation description.</item>
-            <item>Improved the installer script.</item>
-            <item>Moved early exit logic into the dispatcher.</item>
-            <item>Properly implemented the script file in the manifest.</item>
-        </change>
-        <remove>
-            <item>Removed unnecessary loading of language strings.</item>
-        </remove>
-    </changelog>
-    <changelog>
-        <element>mod_slideoutbox</element>
-        <type>module</type>
-        <version>1.0</version>
-        <addition>
-            <item>Initial release.</item>
-        </addition>
-    </changelog>
+  <changelog>
+    <element>mod_slideoutbox</element>
+    <type>module</type>
+    <version>1.5</version>
+    <fix>
+        <item>Fixed slideout box visibility by reducing internal padding and increasing margins around the button for improved spacing.</item>
+        <item>Removed duplicated JavaScript code to simplify the slideout box behavior and improve maintainability.</item>
+    </fix>
+    <addition>
+        <item>Added a URL contains filter in the dispatcher to control when the slideout box is displayed based on the current page URL.</item>
+        <item>Added a dedicated JavaScript function to close the slideout box, centralizing the closing behavior.</item>
+        <item>Added support for closing the slideout box through elements with a designated CSS class.</item>
+        <item>Added French and English language strings for the URL contains filter.</item>
+    </addition>
+    <remove>
+        <item>Removed the version comment from the language file.</item>
+    </remove>
+  </changelog>
+  <changelog>
+      <element>mod_slideoutbox</element>
+      <type>module</type>
+      <version>1.4</version>
+      <fix>
+          <item>Fixed content clipping on screens with limited vertical space by allowing the slideout box to scroll when its content exceeds the available viewport height.</item>
+          <item>Improved compatibility with light and dark themes by allowing the slideout box text and headings to inherit the active theme's text color.</item>
+          <item>Fixed close button visibility across light and dark themes by replacing the SVG background image with a CSS mask that uses the inherited text color.</item>
+      </fix>
+      <addition>
+          <item>Added automatic close button color adaptation through CSS masking and <code>currentColor</code>, eliminating the need for theme-specific close button rules.</item>
+          <item>Added responsive height handling to keep the slideout box usable on wide but short screens.</item>
+          <item>Added CSS variables for configuring the slideout box text, background, button, and button hover colors.</item>
+      </addition>
+      <remove>
+          <item>Removed hard-coded text colors from the slideout box and its headings and paragraphs.</item>
+          <item>Removed the SVG data URI previously used as the close button background image.</item>
+      </remove>
+  </changelog>
+  <changelog>
+      <element>mod_slideoutbox</element>
+      <type>module</type>
+      <version>1.3</version>
+      <fix>
+          <item>Implemented functionality to replace tokens inside a button URL with variables provided by the module for better click tracking.</item>
+      </fix>
+      <addition>
+          <item>Expanded the language strings for the button inline help to explain the available tokens.</item>
+          <item>Added extra default text-white class to improve button text visibility.</item>
+      </addition>
+      <remove>
+          <item>Removed size parameters from manifest file fields.</item>
+          <item><![CDATA[Removed unnecessary <code>btn-group-yesno</code> class from manifest configuration file.]]></item>
+      </remove>
+  </changelog>
+  <changelog>
+      <element>mod_slideoutbox</element>
+      <type>module</type>
+      <version>1.2</version>
+      <fix>
+          <item>Improved handling of short screens without a scrollbar.</item>
+          <item>Improved check for exclude queries to exactly match the input inside the module configuration.</item>
+          <item>Updated the GitHub repository name and removed broken link at the bottom of the README.</item>
+      </fix>
+      <addition>
+          <item>Added GNU General Public License version 2.</item>
+          <item>Implemented a named handler function for the scroll listener that disables it when the slideout box appears.</item>
+          <item>Added class btn-group-yesno to radio buttons inside the manifest configuration file.</item>
+          <item>Added changelogurl tag to the extension manifest XML file to link versions to changelogs in the manage view.</item>
+          <item>Added changelog entries for all versions to the update directory.</item>
+      </addition>
+      <change>
+          <item>Implemented AbstractModuleDispatcher override of getLayoutData instead of dispatch.</item>
+          <item>Changed module variable inside the template file due to AbstractModuleDispatcher implementation.</item>
+          <item>Changed order of statements inside the template file to move variable declaration after web asset loading.</item>
+          <item><![CDATA[Updated versions of asset items inside the <code>joomla.asset.json</code> file.]]></item>
+          <item>Standardized items and corrected URLs inside the update server file.</item>
+          <item>Replaced Factory call for Document object and instead obtained it from the module application object.</item>
+      </change>
+      <remove>
+          <item>Removed unused unsetCookie function.</item>
+          <item>Removed author URL, author email, and element from manifest file.</item>
+      </remove>
+  </changelog>
+  <changelog>
+      <element>mod_slideoutbox</element>
+      <type>module</type>
+      <version>1.1</version>
+      <fix>
+          <item>Fixed CSS item display inside the box.</item>
+          <item>Fixed the content type inside the manifest file.</item>
+      </fix>
+      <addition>
+          <item>Added support for opening links in a new tab when pressing the button.</item>
+          <item>Added more flexibility with content classes.</item>
+          <item>Implemented the abstract dispatcher.</item>
+      </addition>
+      <change>
+          <item>Improved the installation description.</item>
+          <item>Improved the installer script.</item>
+          <item>Moved early exit logic into the dispatcher.</item>
+          <item>Properly implemented the script file in the manifest.</item>
+      </change>
+      <remove>
+          <item>Removed unnecessary loading of language strings.</item>
+      </remove>
+  </changelog>
+  <changelog>
+      <element>mod_slideoutbox</element>
+      <type>module</type>
+      <version>1.0</version>
+      <addition>
+          <item>Initial release.</item>
+      </addition>
+  </changelog>
 </changelogs>

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package Slide Out Box Module
- * @version 1.4
+ * @version 1.5
  * @license GNU General Public License version 2
  */
 

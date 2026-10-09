@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="module" client="site" method="upgrade">
    <name>MOD_SLIDEOUTBOX</name>
-   <version>1.4</version>
+   <version>1.5</version>
    <description>MOD_SLIDEOUTBOX_DESCRIPTION</description>
    <author>Brett</author>
    <creationDate>30/01/2023</creationDate>
    <copyright>(C) Brett Vachon</copyright>
-   <license>GNU General Public License version 2</license>
-   
+   <license>GNU General Public License version 2</license>  
    <scriptfile>script.php</scriptfile>
-   
-   <namespace path="src">Naftee\Module\Slideoutbox</namespace>
-   
+   <namespace path="src">Naftee\Module\Slideoutbox</namespace>  
    <files>
       <folder module="mod_slideoutbox">services</folder>
       <folder>src</folder>
       <folder>tmpl</folder>
-   </files>
-   
+   </files>  
    <languages folder="language">
       <language tag="en-GB">en-GB/mod_slideoutbox.ini</language>
       <language tag="en-GB">en-GB/mod_slideoutbox.sys.ini</language>
       <language tag="fr-FR">fr-FR/mod_slideoutbox.ini</language>
       <language tag="fr-FR">fr-FR/mod_slideoutbox.sys.ini</language>
-   </languages>
-   
+   </languages>  
    <media destination="mod_slideoutbox" folder="media">
       <folder>css</folder>
       <folder>js</folder>
       <filename>joomla.asset.json</filename>
-   </media>
-   
+   </media>  
    <config>
       <fields name="params">
          <fieldset name="basic">
@@ -42,6 +36,7 @@
                <option value="0">JNO</option>
             </field>
             <field name="exclude_queries" type="text" label="MOD_SLIDEOUTBOX_EXCLUDE_QUERIES_LABEL" description="MOD_SLIDEOUTBOX_EXCLUDE_QUERIES_DESC" default="" size="75" filter="raw" />
+            <field name="filter_url_contains" type="textarea" label="MOD_SLIDEOUTBOX_FILTER_URL_CONTAINS_LABEL" description="MOD_SLIDEOUTBOX_FILTER_URL_CONTAINS_DESC" rows="5" filter="raw" />
          </fieldset>
          <fieldset name="slidebox_settings" label="MOD_SLIDEOUTBOX_FIELDSET_SLIDEBOX_SETTINGS_LABEL">
             <field name="show_heading" type="radio" class="btn-group" default="0" label="MOD_SLIDEOUTBOX_SHOW_HEADING_LABEL" description="MOD_SLIDEOUTBOX_SHOW_HEADING_DESC">
@@ -76,10 +71,8 @@
             </field>
          </fieldset>
       </fields>
-   </config>
-   
+   </config>  
    <changelogurl>https://raw.githubusercontent.com/brettvac/slideoutbox/refs/heads/main/update/changelog.xml</changelogurl>
-
    <updateservers>
       <server type="extension" name="Slide Out Box Updates">https://raw.githubusercontent.com/brettvac/slideoutbox/refs/heads/main/update/updates.xml</server>
    </updateservers>
