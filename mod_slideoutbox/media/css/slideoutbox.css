@@ -15,9 +15,10 @@
     max-height: 80vh;
     z-index: 999;
     box-sizing: border-box;
-    visibility: hidden; /* Hide initially to prevent border flash */
+    visibility: hidden; /* Hide initially to prevent appearance of scroll bars */
     color: var(--sbox-text-color);
     overflow-y: auto; /* Scroll bar on wide but short screens */
+    overflow-x: clip; /* Prevent the scroll bar from showing when the slideoutbox slides out */
 }
 
 .sbox [id^="sbox-"] {
@@ -38,7 +39,7 @@
     box-shadow: 0 0 1.25rem -0.5rem #000;
 }
 
-.sbox:has([id^="sbox-"].active) {
+.sbox.active {
     visibility: visible;
 }
 

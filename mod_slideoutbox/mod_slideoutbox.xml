@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="module" client="site" method="upgrade">
    <name>MOD_SLIDEOUTBOX</name>
-   <version>1.5</version>
+   <version>1.6</version>
    <description>MOD_SLIDEOUTBOX_DESCRIPTION</description>
    <author>Brett</author>
    <creationDate>30/01/2023</creationDate>
@@ -30,7 +30,7 @@
          <fieldset name="basic">
             <field name="position_notice" type="note" class="alert alert-info" label="" description="MOD_SLIDEOUTBOX_POSITION_NOTICE_DESC" />
             <field name="scroll_depth" type="number" label="MOD_SLIDEOUTBOX_SCROLL_DEPTH_LABEL" description="MOD_SLIDEOUTBOX_SCROLL_DEPTH_DESC" min="0" max="100" step="1" default="50" filter="integer" />
-            <field name="cookie_expire" type="number" label="MOD_SLIDEOUTBOX_COOKIE_EXPIRE_LABEL" description="MOD_SLIDEOUTBOX_COOKIE_EXPIRE_DESC" min="0" step="1" default="7" size="10" filter="integer" />
+            <field name="cookie_expire" type="number" label="MOD_SLIDEOUTBOX_COOKIE_EXPIRE_LABEL" description="MOD_SLIDEOUTBOX_COOKIE_EXPIRE_DESC" min="-1" step="1" default="7" size="10" filter="integer" />
             <field name="show_once_session" type="radio" class="btn-group" default="0" label="MOD_SLIDEOUTBOX_SHOW_ONCE_SESSION_LABEL" description="MOD_SLIDEOUTBOX_SHOW_ONCE_SESSION_DESC">
                <option value="1">JYES</option>
                <option value="0">JNO</option>

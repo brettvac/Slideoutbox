@@ -1,8 +1,9 @@
 <?php
 /**
- * @package Slide Out Box Module
- * @version 1.5
- * @license GNU General Public License version 2
+ * @package     Joomla.Site
+ * @subpackage  mod_slideoutbox
+ * @version     1.6
+ * @license     GNU General Public License version 2
  */
 
 \defined('_JEXEC') or die;

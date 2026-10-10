@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelogs>
   <changelog>
+      <element>mod_slideoutbox</element>
+      <type>module</type>
+      <version>1.6</version>
+      <fix>
+          <item>Fixed slideout box visibility and scrolling by managing visibility on the outer container while preserving the inner box slide animation.</item>
+          <item>Fixed horizontal overflow caused by the slideout animation by clipping horizontal overflow while retaining vertical scrolling.</item>
+          <item>Corrected JavaScript comments to accurately describe cookie expiration, cookie deletion, and slideout box activation behavior.</item>
+      </fix>
+      <addition>
+          <item>Added support for displaying the slideout box only once per session.</item>
+          <item>Added support for setting the close cookie duration to -1 to delete an existing close cookie during initialization and allow the slideout box to reappear.</item>
+          <item>Added French and English language strings explaining the close cookie duration options.</item>
+          <item>Updated the close cookie configuration to allow a minimum value of -1.</item>
+          <item>Updated the PHP DocBlock to use Joomla.Site as the package and mod_slideoutbox as the subpackage.</item>
+      </addition>
+      <remove>
+          <item>Removed the CSS :has() selector dependency to improve compatibility with older browsers, including Firefox ESR 115.</item>
+      </remove>
+  </changelog>
+  <changelog>
     <element>mod_slideoutbox</element>
     <type>module</type>
     <version>1.5</version>
