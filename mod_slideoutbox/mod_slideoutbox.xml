@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="module" client="site" method="upgrade">
    <name>MOD_SLIDEOUTBOX</name>
-   <version>1.6</version>
+   <version>1.7</version>
    <description>MOD_SLIDEOUTBOX_DESCRIPTION</description>
    <author>Brett</author>
    <creationDate>30/01/2023</creationDate>
@@ -37,6 +37,31 @@
             </field>
             <field name="exclude_queries" type="text" label="MOD_SLIDEOUTBOX_EXCLUDE_QUERIES_LABEL" description="MOD_SLIDEOUTBOX_EXCLUDE_QUERIES_DESC" default="" size="75" filter="raw" />
             <field name="filter_url_contains" type="textarea" label="MOD_SLIDEOUTBOX_FILTER_URL_CONTAINS_LABEL" description="MOD_SLIDEOUTBOX_FILTER_URL_CONTAINS_DESC" rows="5" filter="raw" />
+            <field name="initial_delay_enabled" type="radio" class="btn-group" default="0" label="MOD_SLIDEOUTBOX_INITIAL_DELAY_ENABLED_LABEL" description="MOD_SLIDEOUTBOX_INITIAL_DELAY_ENABLED_DESC">
+               <option value="1">JYES</option>
+               <option value="0">JNO</option>
+            </field>
+            <field name="initial_delay" type="list" default="0" label="MOD_SLIDEOUTBOX_INITIAL_DELAY_LABEL" description="MOD_SLIDEOUTBOX_INITIAL_DELAY_DESC" showon="initial_delay_enabled:1">
+               <option value="1000">1</option>
+               <option value="2000">2</option>
+               <option value="3000">3</option>
+               <option value="4000">4</option>
+               <option value="5000">5</option>
+               <option value="6000">6</option>
+               <option value="7000">7</option>
+               <option value="8000">8</option>
+               <option value="9000">9</option>
+               <option value="10000">10</option>
+               <option value="11000">11</option>
+               <option value="12000">12</option>
+               <option value="13000">13</option>
+               <option value="14000">14</option>
+               <option value="15000">15</option>
+            </field>
+            <field name="debug_enabled" type="radio" class="btn-group" default="0" label="MOD_SLIDEOUTBOX_DEBUG_ENABLED_LABEL" description="MOD_SLIDEOUTBOX_DEBUG_ENABLED_DESC">
+              <option value="1">JYES</option>
+              <option value="0">JNO</option>
+            </field>
          </fieldset>
          <fieldset name="slidebox_settings" label="MOD_SLIDEOUTBOX_FIELDSET_SLIDEBOX_SETTINGS_LABEL">
             <field name="show_heading" type="radio" class="btn-group" default="0" label="MOD_SLIDEOUTBOX_SHOW_HEADING_LABEL" description="MOD_SLIDEOUTBOX_SHOW_HEADING_DESC">

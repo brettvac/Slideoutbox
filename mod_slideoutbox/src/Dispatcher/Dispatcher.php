@@ -2,7 +2,7 @@
 /**
  * @package     Joomla.Site
  * @subpackage  mod_slideoutbox
- * @version     1.6
+ * @version     1.7
  * @license     GNU General Public License version 2
  */
 
@@ -13,6 +13,7 @@ namespace Naftee\Module\Slideoutbox\Site\Dispatcher;
 use Joomla\CMS\Dispatcher\AbstractModuleDispatcher;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Uri\Uri;
+use Joomla\CMS\Log\Log;
 
 class Dispatcher extends AbstractModuleDispatcher
 {
@@ -46,6 +47,12 @@ class Dispatcher extends AbstractModuleDispatcher
         {
             return false;
         }
+        
+        // Perform logging if enabled
+        if ((bool) $params->get('debug_enabled', 0))
+        {
+            Log::add(sprintf('Slideoutbox fired | Module ID: %d | Time: %s | URL: %s', $this->module->id, date('Y-m-d H:i:s'), Uri::getInstance()->toString()), Log::DEBUG, 'slideoutbox-debug');
+        }
 
         return $data;
     }
@@ -75,12 +82,7 @@ class Dispatcher extends AbstractModuleDispatcher
         $currentPath = $uri->getPath();
 
         // One filter string per line
-        $filters = preg_split(
-            '/\R+/',
-            $filterUrlContains,
-            -1,
-            PREG_SPLIT_NO_EMPTY
-        );
+        $filters = preg_split('/\R+/', $filterUrlContains, -1, PREG_SPLIT_NO_EMPTY);
 
         foreach ($filters as $filter)
         {

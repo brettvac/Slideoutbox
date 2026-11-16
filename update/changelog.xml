@@ -3,6 +3,22 @@
   <changelog>
       <element>mod_slideoutbox</element>
       <type>module</type>
+      <version>1.7</version>
+      <addition>
+          <item>Added an option to enable or disable debug logging of slideoutbox firing, including the module ID, timestamp and URL.</item>
+          <item>Added an optional, configurable delay before displaying the slideout box when visitors arrive at a page through an anchor link and the resulting scroll position meets or exceeds the configured scroll threshold.</item>
+      </addition>
+      <change>
+          <item>Updated the minimum required Joomla version to 5.0.0.</item>
+          <item>Updated the minimum required PHP version to 8.1.0.</item>
+      </change>
+      <language>
+          <item>Added English and French language strings for the configurable delay before displaying the slideout box when visitors arrive at a page through an anchor link and the resulting scroll position meets or exceeds the configured scroll threshold.</item>
+      </language>
+  </changelog>
+  <changelog>
+      <element>mod_slideoutbox</element>
+      <type>module</type>
       <version>1.6</version>
       <fix>
           <item>Fixed slideout box visibility and scrolling by managing visibility on the outer container while preserving the inner box slide animation.</item>

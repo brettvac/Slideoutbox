@@ -2,7 +2,7 @@
 /**
  * @package     Joomla.Site
  * @subpackage  mod_slideoutbox
- * @version     1.6
+ * @version     1.7
  * @license     GNU General Public License version 2
  */
 

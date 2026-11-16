@@ -2,7 +2,7 @@
 /**
  * @package     Joomla.Site
  * @subpackage  mod_slideoutbox
- * @version     1.6
+ * @version     1.7
  * @license     GNU General Public License version 2
  */
 
@@ -26,6 +26,8 @@ $scroll_depth = $params->get('scroll_depth', 50);
 $cookie_expire = $params->get('cookie_expire', 7);
 $options = [
     'scrollDepth' => (int)$scroll_depth,
+    'initialDelayEnabled' => (int)$params->get('initial_delay_enabled', 0),
+    'initialDelay' => (int)$params->get('initial_delay', 0),
     'cookieExpire' => (int)$cookie_expire,
     'moduleId' => $module->id
 ];
